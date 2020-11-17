@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 04 - RocketSeat</title>
+	<meta charset="utf-8">
+	<script>
+		function chamaF(){
+	var a = document.getElementById('e1').value; 
+	
+	a = parseInt(a);
+	var resultado = experiencia(a);
+
+	function experiencia (a){
+	        if (a>=0 && a<=1) {
+	 	        document.write ("Seu nível de experiência é Iniciante.");
+	        } else if (a>=1 && a<=3) {
+	    	    document.write ("Seu nível de experiência é Intermediário.");
+	        } else if (a>=3 && a<=6){
+	    	    document.write ("Seu nível de experiência é Avançado.");
+	        } else {
+                document.write ("Seu nível de experiência é Jedi Master.");
+            }            
+        }
+	}
+	</script>
+</head>
+	<body>
+		<form>
+			<h4>Insira a quantidade de anos de estudo:</h4>
+			<input type="text" id="e1">
+			<br>
+			<br>
+			<button onclick=chamaF()>Executar</button>
+		</form>
+	</body>
+</html>
