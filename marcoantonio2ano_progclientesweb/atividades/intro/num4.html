@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios</title>
+	<meta charset="utf-8">
+	<script>
+		function chamaF(){
+	var n1 = document.getElementById('e1').value; 
+	var n2 = document.getElementById('e2').value; 
+	
+	n1 = parseFloat(n1);
+	n2 = parseFloat(n2);
+
+	var r = hipote(n1, n2);{
+	document.write("A medida da hipotenusa correspondente aos catetos de dimensões " + n1 + " e " + n2 + " é " + r + ".");
+	}
+
+	 function hipote(n1, n2) 
+    { 
+        var h = Math.pow(n1, 2) + Math.pow(n2, 2);
+        return Math.sqrt(h);
+    } 
+	}
+	</script>
+</head>
+	<body>
+        <h3>Considerando os dois números passado representam a dimensão dos catetos de um triângulo retângulo, faça um programa que calcule o tamanho da hipotenusa.</h3>
+		<form>
+			<h4>Insira a primeira medida:</h4>
+			<input type="text" id="e1">
+			<h4>Insira a segunda medida:</h4>
+			<input type="text" id="e2">
+			<br>
+			<br>
+			<button onclick="chamaF();">Executar</button>
+		</form>
+	</body>
+</html>

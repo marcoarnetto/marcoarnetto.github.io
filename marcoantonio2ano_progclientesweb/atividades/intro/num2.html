@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios</title>
+	<meta charset="utf-8">
+	<script>
+		function chamaF(){
+	var n1 = document.getElementById('e1').value; 
+	var n2 = document.getElementById('e2').value; 
+	n1 = parseFloat(n1);
+	n2 = parseFloat(n2);
+
+	    if (n1 > n2) {
+	 	    return document.write("O número " + n1 + " é maior que o número " + n2 + ".");
+	    } else if (n2 > n1) {
+		    return document.write("O número " + n2 + " é maior que o número " + n1 + ".");
+	    } else {
+		    return document.write("Os números " + n1 + " e " + n2 + " são iguais.");
+	    }
+	}
+	</script>
+</head>
+	<body>
+        <h3>Faça um programa que leia dois números e indique qual dos dois é o maior.</h3>
+		<form>
+			<h4>Insira o primeiro número:</h4>
+			<input type="text" id="e1">
+			<br>
+			<h4>Insira o segundo número:</h4>
+			<input type="text" id="e2">
+			<br>
+			<br>
+			<button onclick="chamaF();">Executar</button>
+		</form>
+	</body>
+</html>

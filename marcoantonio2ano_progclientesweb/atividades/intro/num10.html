@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios</title>
+	<meta charset="utf-8">
+	<script>
+		function chamaF(){
+	var n1 = document.getElementById('e1').value; 
+	
+	n1 = parseInt(n1);
+
+		if (n1 <= 11) {
+			return document.write("O preço total das maçãs será de " + n1*1.30+ ".");
+		} else {
+			return document.write("O preço total das maçãs será de " + n1*1 + ".");
+		}
+	}
+	</script>
+</head>
+	<body>
+        <h3>As maçãs custam R$ 1,30 cada se forem compradas menos de uma dúzia, e R$ 1,00 se forem compradas pelo menos 12. Escreva um programa que leia o número de maçãs compradas, calcule e escreva o custo total da compra.</h3>
+		<form>
+			<h4>Insira a quantidade de maçãs compradas:</h4>
+			<input type="text" id="e1">
+			<br>
+			<br>
+			<button onclick="chamaF();">Executar</button>
+		</form>
+	</body>
+</html>

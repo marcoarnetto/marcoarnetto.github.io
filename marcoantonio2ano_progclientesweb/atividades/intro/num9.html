@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios</title>
+	<meta charset="utf-8">
+	<script>
+		function chamaF(){
+	var n1 = document.getElementById('e1').value; 
+	var n2 = document.getElementById('e2').value;
+	var n3 = document.getElementById('e3').value; 
+	
+	n1 = parseFloat(n1);
+	n2 = parseFloat(n2);
+	n3 = parseFloat(n3);
+
+	var r = mediaF(n1, n2, n3);{
+	document.write("A sua média final será de " + r + ".");
+	}
+
+	 function mediaF(n1, n2, n3) {
+    	return r=(n1*2+n2*3+n3*5)/10;
+	}
+	}
+	</script>
+</head>
+	<body>
+        <h3>Faça um algoritmo que leia três notas de um aluno, calcule e escreva a média final deste aluno. Considerar que a média é ponderada e que o peso das notas é 2, 3 e 5. Fórmula para o cálculo da média final é:
+            n1 * 2 + n2 * 3 + n3 * 5 
+mediafinal = -----------------------------------
+                            10</h3>
+		<form>
+			<h4>Insira a nota da avaliação 1:</h4>
+			<input type="text" id="e1">
+			<h4>Insira a nota da avaliação 2:</h4>
+			<input type="text" id="e2">
+			<h4>Insira a nota da avaliação 3:</h4>
+			<input type="text" id="e3">
+			<br>
+			<br>
+			<button onclick="chamaF();">Executar</button>
+		</form>
+	</body>
+</html>

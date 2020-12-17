@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercícios</title>
+	<meta charset="utf-8">
+	<script>
+		function chamaF(){
+	var n1 = document.getElementById('e1').value; 
+	var n2 = document.getElementById('e2').value;
+	var n3 = document.getElementById('e3').value; 
+	var n4 = document.getElementById('e4').value; 
+
+	n1 = parseInt(n1);
+	n2 = parseFloat(n2);
+	n3 = parseFloat(n3);
+	n4 = parseFloat(n4);
+	n4 /=100;
+
+	var r = salF(n1, n2, n3, n4);{
+	document.write("O seu salário final será de " + r + ".");
+	}
+
+	 function salF(n1, n2, n3, n4) {
+    	return r=n1*n4+n2*0.05+n3;
+	}
+	}
+	</script>
+</head>
+	<body>
+        <h3>Uma revendedora de carros usados paga a seus funcionários vendedores um salário fixo por mês, mais uma comissão também fixa para cada carro vendido e mais 5% do valor das vendas por ele efetuadas. Escrever um algoritmo que leia o número de carros por ele vendidos, o valor total de suas vendas, o salário fixo e o valor que ele recebe por carro vendido. Calcule e escreva o salário final do vendedor.</h3>
+		<form>
+			<h4>Insira a quantidade automóveis vendidos:</h4>
+			<input type="text" id="e1">
+			<h4>Insira o valor total de suas vendas:</h4>
+			<input type="text" id="e2">
+			<h4>Insira o seu salário fixo:</h4>
+			<input type="text" id="e3">
+			<h4>Insira a porcentagem de comissão por cada automóvel vendido:</h4>
+			<input type="text" id="e4">
+			<br>
+			<br>
+			<button onclick="chamaF();">Executar</button>
+		</form>
+	</body>
+</html>
