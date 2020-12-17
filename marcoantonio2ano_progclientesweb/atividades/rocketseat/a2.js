@@ -10,8 +10,13 @@ var i;
 function pares (i, b){
     for(i; i<=b; i++) {
         if(i%2==0) {
-            console.log(i+"<br>");
-        }
+        var r= i+"<br>"
+         
+        }   
+        var retorno=document.getElementById("retorno");
+        var resultado= r;
+        var resultStr = document.createTextNode(retorno);
+        retorno.appendChild(resultStr);
     }
 }
 }
