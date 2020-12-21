@@ -5,18 +5,20 @@ var b = document.getElementById('e2').value;
 a = parseInt(a);
 b = parseInt(b);
 
-var i;
+var i=0;
+var r=array[i];
 
-function pares (i, b){
-    for(i; i<=b; i++) {
-        if(i%2==0) {
-        var r= i+"<br>"
-         
-        }   
-        var retorno=document.getElementById("retorno");
-        var resultado= r;
-        var resultStr = document.createTextNode(retorno);
-        retorno.appendChild(resultStr);
+    for(a; a<=b; a++) {
+        if(a%2==0) {
+        r[i]= a+"<br>";
+        }
+        i++; 
+       
     }
-}
+    var retorno=document.getElementById("retorno");
+    var resultado=r;
+    var resultStr = document.createTextNode(resultado);
+    retorno.appendChild(resultStr)
+    retorno.innerHTML = "";
+    retorno.appendChild(resultStr)
 }
