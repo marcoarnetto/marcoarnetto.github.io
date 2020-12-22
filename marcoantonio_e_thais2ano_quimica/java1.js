@@ -26,6 +26,6 @@
 		var r1=resultado1;
 		var resultStr1 = document.createTextNode(r1);
 		retorno1.appendChild(resultStr1);
-		retorno1.innerHTML = "O resultado é: ";
+		retorno1.innerHTML = "<br>O resultado é: ";
 		retorno1.appendChild(resultStr1);
 }
