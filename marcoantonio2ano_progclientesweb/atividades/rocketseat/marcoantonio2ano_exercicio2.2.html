@@ -5,7 +5,7 @@
 
 <meta charset="utf8">
 </head>
-<img src="atividade2.1.png">
+<img src="atividade2.2.png">
 <br>
 <body>  
 
@@ -15,11 +15,13 @@
 </div>
 
 
+
 <br><br><h4><a href="../atividades1trimestre.html">> Voltar</a></h4>
 </body>
 <script>
   btnCriar.style.height = '40px';
 btnCriar.style.marginLeft = '45%';
+
 
 function gerarQuadrado() {
 
@@ -27,7 +29,15 @@ function gerarQuadrado() {
     boxElement.style.width = '180px';
     boxElement.style.height = '180px';
     boxElement.style.margin = '10px';
-    boxElement.style.backgroundColor = '#f00';
+    boxElement.style.backgroundColor = '#ff0000';
+    boxElement.addEventListener('mouseover', function getRandomColor(){
+        var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+            }
+            return this.style.background = color;
+        });
 
 
 boxElement.classList.add('box');

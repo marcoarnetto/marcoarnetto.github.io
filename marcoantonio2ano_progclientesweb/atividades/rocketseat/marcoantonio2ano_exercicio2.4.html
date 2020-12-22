@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 04, Desafio 02 - RocketSeat</title>
+
+<meta charset="utf8">
+</head>
+<img src="atividade2.4.png">
+<br>
+<body>  
+    <h3>Insira o novo nome:</h3>
+    <input type="text" id="e1">
+    <button onclick="adicionar()">Adicionar</button>
+<ul id="lista">
+    </ul>
+<br><h4><a href="../atividades1trimestre.html">> Voltar</a></h4>
+</body>
+<script>
+    var nomes = ["Diego", "Gabriel", "Lucas"];   
+    function adicionar() {
+        var novo = document.getElementById("e1").value;
+        nomes.push(novo);
+        var remov = document.querySelectorAll(".remover");
+        for(var x=0; x<=remov.length-1; x++){
+        remov[x].remove();
+    }
+    var caixa = document.getElementById("e1").value="";
+    imprimir();
+    }
+    function imprimir(){
+        var lista = document.getElementById("lista");
+        for(var x=0; x<=nomes.length-1; x++){
+        var nome = document.createTextNode(nomes[x]);
+        var item = document.createElement("li");
+        item.classList.add("remover");
+        item.appendChild(nome);
+        lista.appendChild(item);
+        }
+    }
+</script>
+    
+
+</html>

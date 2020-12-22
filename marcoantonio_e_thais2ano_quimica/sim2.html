@@ -54,10 +54,11 @@
                         <span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Home</a>
                 </li><li class="nav-item dropdown"><a class="nav-link link dropdown-toggle text-info display-4" href="index.html" data-toggle="dropdown-submenu" aria-expanded="false"><span class="mbri-sites mbr-iconfont mbr-iconfont-btn"></span>
                         Simulações</a><div class="dropdown-menu"><a class="dropdown-item text-info display-4" href="sim1.html">Simulação 1</a><a class="dropdown-item text-info display-4" href="sim2.html">Simulação 2</a><a class="dropdown-item text-info display-4" href="sim3.html">Simulação 3</a></div></li>
-                <li class="nav-item">
-                    <a class="nav-link link text-info display-4" href="https://mobirise.co"><span class="mbri-idea mbr-iconfont mbr-iconfont-btn" style="color: rgb(252, 28, 59);"></span>
+                <li class="nav-item dropdown"><a class="nav-link link dropdown-toggle text-info display-4" href="index.html" data-toggle="dropdown-submenu" aria-expanded="false"><span class="mbri-sites mbr-iconfont mbr-iconfont-btn"></span>
                         
-                        Aprenda mais</a>
+                        Aprenda mais</a><div class="dropdown-menu"><a class="dropdown-item text-info display-4" href="https://www.manualdaquimica.com/quimica-geral/estequiometria-das-reacoes-quimicas.htm">Manual da Química</a><a class="dropdown-item text-info display-4" href="https://brasilescola.uol.com.br/quimica/estequiometria.htm">Brasil Escola</a><a class="dropdown-item text-info display-4" href="https://www.todamateria.com.br/estequiometria/">Toda Matéria</a></div></li>
+                <li class="nav-item">
+                    <a class="nav-link link text-info display-4" href="aprenda_mais.html"><span class="mbri-idea mbr-iconfont mbr-iconfont-btn" style="color: rgb(252, 28, 59);"></span>
                 </li></ul>
             
         </div>
@@ -72,73 +73,46 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="title col-12 col-lg-8">
-                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">
-                    Simulação 2</h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">
-                    Esta simulação irá receber o dado de um reagente em Mol e irá retornar a quantidade de H<sub>2</sub>O em moléculas. Os reagente em questão são gás hidrogênio (H<sub>2</sub>) e gás oxigênio (O<sub>2</sub>).</h3>
-            </div>
-        </div>
+                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">Simulação 2</h2>
+                <!--<h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">Transformação de número de mol para massa em grama do Oxigênio</h3>-->
+                <br>
+                <h4 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-6"> Insira o valor de x e depois selecione a operação </h4>
+                
+                <div class="col-md-12 input-group-btn align-center">
+                  <input class="align-center mbr-light pb-3 mbr-fonts-style display-7" type="number" name="valor" id="valor">
+                  <br> 
+                  <button type="submit" class="btn btn-form btn-secondary display-4" onclick="primeira ();">número de moléculas em X mols de H2</button>
+                  <button type="submit" class="btn btn-form btn-secondary display-4" onclick="primeira2 ();">número de mol de H2 em X x 10^23 moléculas de H2O</button>
+                  <br>
+                  <p id="formula1"></p>
+                  <p id="conta1"></p>
+                  <p id="resul1"></p>
+                  <p id="resultado1"></p>
+                  <br>
+                </div>
+                <div class="col-md-12 input-group-btn align-center">
+                  <br>
+                <input class="align-center mbr-light pb-3 mbr-fonts-style display-7" type="number" name="valor2" id="valor2">
+                <br>
+                  <button type="submit" class="btn btn-form btn-secondary display-4" onclick="segunda ();">número de moléculas em X mols de O2</button>
+                  <button type="submit" class="btn btn-form btn-secondary display-4" onclick="segunda2 ();">número de mol de O2 em X x 10^23 moléculas de H2O</button>
+                  <br>
+                  <p id="formula2"></p>
+                  <p id="conta2"></p>
+                  <p id="resul2"></p>
+                  <p id="resultado2"></p>
+                  <br>
+                </div>
+           </div>
     </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="media-container-column col-lg-8" data-form-type="formoid">
-                <!---Formbuilder Form--->
-                <!--
-                <form action="https://mobirise.com/" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="text" data-form-email="true" value="UfVOelBFeG9NIIl5tL64cQytZIm86lBhHhBFnw1noxWsst43hqbAzwDYvLjBMenDLN0K3dnQamHsb+Y1gM6YltBfpHb5RhvGsMPTduBEp4sdHmzIrkD1ogH1Xr7QD9xt">
-                    <div class="row">
-                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
-                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
-                        </div>
-                    </div>
-                    <div class="dragArea row">
-                        
-                        
-                        <div data-for="text" class="col-md-4 form-group">
-                            <select class= "form-control display-7 " id="selecao">
-                              <option value ="mol">mol</option>
-                              <option value ="massa">massa</option>
-                            </select>
-                            <label for="text-form1-i" class="form-control-label mbr-fonts-style display-7">1º dado</label>
-                            <input type="tel" name="phone" data-form-field="Phone" class="form-control display-7" id="phone-form1-i">
-                            <input type="text" class="form-control display-7" id="num" placeholder="Entre com o valor: ">
-                        </div>
-                        
-                        <div class="col-md-12 input-group-btn align-center">
-                          <button class="btn btn-form btn-secondary display-4" id="btOK">EXECUTAR</button>
-                        </div>
-                        <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5" id="resultado"> O resultado é: </h3>
-                    </div>
-                </form>Formbuilder Form--->
-                 <h2>Simulação 2</h2>
-    
-      <h3>Selecione o dado e o valor que deseja calcular:</h3>
-      <br>
-      <select id="tipo2">
-        <option value ="h2">H<sub>2</sub></option>
-        <option value ="o2">O<sub>2</sub></option>
-      </select>
-      <br>
-      <input type="text" id="num2" placeholder="Entre com o valor: ">
-
-      <br/>
-
-      <button id="btOk2">Executar</button>
-    
-    <p id="resultado2"><br> A quantidade de moléculas é de: </p><br>
-    <p>Sabendo que todo Mol tem 6.02 x 10^23 átomos, multiplicamos a quantidade de Mol pela quantia de moléculas previamente mencionada.</p><br>
-		<p id="hh"><strong>Proporção entre Mol e número de átomos em H<sub>2</sub>O:</strong>
-			<br><br>1 Mol --- 6.02 • 10^23 moléculas de H<sub>2</sub>O</p>
-			<p id="n2a">Total de Mol(y) --- quantia de moléculas(x)</p>
-			<p> <br>Assim, temos: <br></p>
-			<p id="n2aa"> 1x = 6.02y • 10^23 <br>
-			<br>x = 6.02y • 10^23 : 1</p>
-			<br>
-			
-			
-        </div>
+                
+            </div>
         </div>
     </div>
-    <script src="java2.js"></script>
+
 
 </section>
 
@@ -149,12 +123,71 @@
     <div class="container">
         <div class="media-container-row title">
             <div class="col-12 col-md-8">
-                <div class="mbr-section-btn align-center"><a class="btn btn-secondary-outline display-4" href="page4.html"><span class="mbri-idea mbr-iconfont mbr-iconfont-btn"></span>Aprenda mais</a> 
+                <div class="mbr-section-btn align-center"><a class="btn btn-secondary-outline display-4" href="https://brasilescola.uol.com.br/quimica/estequiometria.htm"><span class="mbri-idea mbr-iconfont mbr-iconfont-btn"></span>Aprenda mais</a> 
                     <a class="btn btn-secondary-outline display-4" href="index.html"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Home</a></div>
             </div>
         </div>
     </div>
 </section>
+
+  <script type="text/javascript">
+    function primeira ()
+    {
+      var molecula = parseFloat(6.02);
+      var Valor = document.getElementById("valor").value;
+      var resultado = Valor*molecula;
+      var form1 = "Se 1 mol de H2 formam 6,02 x 10^23 de H2O,<br>1 mol de H2 ---> 6,02 x 10^23 moléculas de H2O<br>"+Valor+" mol de H2 ---> X x 10^23 moléculas H2O";
+      var conta1 = "X x 10^23 moléculas de H2O = ("+Valor+" x ("+molecula+" x 10^23)) / 1";
+      var res1 = "Resultado: X x 10^23 moléculas de H2O= "+ resultado;
+      var result1 = Valor+" mol de H2 forma "+resultado+" x 10^23 moléculas de H2O";
+      document.getElementById("formula1").innerHTML = form1;
+      document.getElementById("conta1").innerHTML = conta1;
+      document.getElementById("resul1").innerHTML = res1;
+      document.getElementById("resultado1").innerHTML = result1;
+    }
+    function primeira2 (){
+      var molecula = parseFloat(6.02);
+      var Valor = document.getElementById("valor").value;
+      var resultado = Valor/molecula;
+      var form1 = "Se 6,02 x 10^23 moléculas de H2O necessita de 1 mol de H2 para ser formado,<br>6,02 x 10^23 moléculas de H2O ---> 1 mol de H2<br>"+Valor+" x 10^23 moléculas de H2O ---> X mol de H2";
+      var conta1 = "X mol de H2 = ("+Valor+" x 1) /"+ molecula +" x 10^23";
+      var res1 = "Resultado: X mol H2= "+resultado;
+      var result1 = Valor+" x 10^23 moléculas de H2O são formados a partir de "+resultado+" mol de H2";
+      document.getElementById("formula1").innerHTML = form1;
+      document.getElementById("conta1").innerHTML = conta1;
+      document.getElementById("resul1").innerHTML = res1;
+      document.getElementById("resultado1").innerHTML = result1;
+    }
+    function segunda (){
+      var molecula = parseFloat(6.02);
+      var dois = parseFloat(2);
+      var Valor = document.getElementById("valor2").value;
+      var resultado = Valor*molecula*dois;
+      var form2 = "Se 1 mol de H2 formam 2 x 6,02 x 10^23 de H2O,<br>1 mol de O2 ---> 2 x 6,02 x 10^23 moléculas de H2O<br>"+Valor+" mol de O2 ---> 2 x X x 10^23 moléculas H2O";
+      var conta2 = "2 x X x 10^23 moléculas de H2O = ("+Valor+" x (2 x"+molecula+" x 10^23)) / 1";
+      var res2 = "Resultado: 2 x X x 10^23 moléculas de H2O= "+ resultado;
+      var result2 = Valor+" mol de O2 forma "+resultado+" x 10^23 moléculas de H2O";
+      document.getElementById("formula2").innerHTML = form2;
+      document.getElementById("conta2").innerHTML = conta2;
+      document.getElementById("resul2").innerHTML = res2;
+      document.getElementById("resultado2").innerHTML = result2;
+    }
+    function segunda2 (){
+      var molecula = parseFloat(6.02);
+      var Valor = document.getElementById("valor2").value;
+      var resultado = Valor/molecula*2;
+      var form2 = "Se 6,02 x 10^23 moléculas de H2O necessita de 0,5 mol de O2 para ser formado,<br> 2 x 6,02 x 10^23 moléculas de H2O ---> 1 mol de O2<br>2 x "+Valor+" x 10^23 moléculas de H2O ---> X mol de O2";
+      var conta2 = "X mol de O2 = ("+Valor+" x 1) / 2 x "+ molecula +" x 10^23";
+      var res2 = "Resultado: X mol O2= "+resultado;
+      var result2 = " 2 x "+Valor+" x 10^23 moléculas de H2O são formados a partir de "+resultado+" mol de O2";
+      document.getElementById("formula2").innerHTML = form2;
+      document.getElementById("conta2").innerHTML = conta2;
+      document.getElementById("resul2").innerHTML = res2;
+      document.getElementById("resultado2").innerHTML = result2;
+    }
+  </script>
+
+
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
