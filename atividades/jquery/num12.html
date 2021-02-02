@@ -12,19 +12,78 @@
     <link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 </head>
+<style>
 
+        .row {
+    padding: 2%;
+    border: 2%;
+    margin: 2%
+    }
+
+        .column {
+    float: left;
+    width: 50%;
+}
+
+
+        .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+        .column {
+    width: 100%;
+  }
+}
+
+        #tituloo {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    }
+
+        #titulooo {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    }
+
+        #definicao {
+    text-align: justify;
+        }
+
+</style>
 <body>
 
 	<mark>
  <h2>Dicionário Online</h2></mark>
-	<p> Clique na palavra que você deseja saber a definição:</p>
-	<ul id="termos"></ul>
-	<div class="fundo">
-		<p id=termo></p>
-		<p id=definicao></p>
-		<p id=autor></p>
-		<p id=dataCriacao></p>
+    <div class="row">
+        <div class="column">  
+    	<p id="titulooo">Termos cadastrados</p>
+	    <ul id="termos"></ul>
+        </div>
+        <div class="column">
+    	<div class="fundo">
+            <p id="tituloo"></p>
+            <br>
+    		<p id=termo></p>
+	    	<p id=definicao></p>
+		    <p id=autor></p>
+		    <p id=dataCriacao></p>
+        </div>
+        </div>    
 	</div>
+    <h4><a href="../atividades2trimestre.html">> Voltar</a></h4>
 </body>
 	<script>
 		$(function () {
@@ -58,11 +117,13 @@
 					)
 
 				$("#termos").on("click", "li", function () {
-					let id = $(this).val(); 
+                
+					let id = $(this).val();
+                    $("#tituloo").text("Definição");
 					$("#termo").text(dicio[id].termo);
 					$("#definicao").text(dicio[id].definicao);
 					$("#autor").text(dicio[id].autor);
-					$("#dataCriacao").text (dicio[id].dataCriacao);
+					$("#dataCriacao").text("Data de criação: "+dicio[id].dataCriacao);
 				})
 			})
 		});

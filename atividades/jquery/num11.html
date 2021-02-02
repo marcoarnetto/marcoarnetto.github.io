@@ -1,43 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Exercício 04, Desafio 02 - RocketSeat</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <meta charset="utf8">
+	<title>Exercício 1.1</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="author" content="Marco Rocha">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/better-tema.css">
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 </head>
-<img src="atividade2.4.png">
-<br>
-<body>  
-    <h3>Insira o novo nome:</h3>
-    <input type="text" id="e1">
-    <button onclick="adicionar()">Adicionar</button>
-<ul id="lista">
-    </ul>
-<br><h4><a href="../atividades1trimestre.html">> Voltar</a></h4>
-</body>
-<script>
-    var nomes = ["Diego", "Gabriel", "Lucas"];   
-    function adicionar() {
-        var novo = document.getElementById("e1").value;
-        nomes.push(novo);
-        var remov = document.querySelectorAll(".remover");
-        for(var x=0; x<=remov.length-1; x++){
-        remov[x].remove();
-    }
-    var caixa = document.getElementById("e1").value="";
-    imprimir();
-    }
-    function imprimir(){
-        var lista = document.getElementById("lista");
-        for(var x=0; x<=nomes.length-1; x++){
-        var nome = document.createTextNode(nomes[x]);
-        var item = document.createElement("li");
-        item.classList.add("remover");
-        item.appendChild(nome);
-        lista.appendChild(item);
-        }
-    }
-</script>
-    
+<body>
 
+ 
+
+<fieldset>
+	<legend>Cadastro de livros</legend>
+
+	<input type="text" id="titulo" placeholder="Título"><br><br>
+	<textarea id="descricao"  placeholder="Descrição"></textarea> <br><br>
+	<select id="genero">
+		<option value="Romance">Romance</option>
+		<option value="Drama">Drama</option>
+		<option value="Terror">Terror</option>
+		<option value="Ficção">Ficção</option>
+		<option value="Técnico">Técnico</option>
+	</select>
+
+	<br> <br>
+	<input type="search" id="autor"  placeholder="Autor" >	
+	<button id="add_acervo" onclick="sugerir()">Cadastrar</button>
+	<br>
+	
+</fieldset>
+
+    <h3>Catálogo</h3>
+
+	<table id="acervo">
+		<tr><th>Título</th><th>Descrição</th><th>Gênero</th><th>Autor</th><th></th></tr>
+	</table>
+
+	<form action="http://rafaelescalfoni.net/web/livros.php" 
+		method="post">
+		<input type="hidden" name="acervo_post">
+		<input type="submit" class="botao" value="Salvar no BD">
+	</form>
+	 </body>
+     <script>
+		$(function(){ 
+			$("#add_acervo").click(function(){
+				let tituloLivro =$("#titulo").val();
+				let descricaoLivro =$("#descricao").val();
+				let generoLivro =$("#genero").val();
+				let autorLivro =$("#autor").val();
+
+
+				$("#acervo")
+					.append(
+						$("<tr>")
+							.append(
+								$("<td>")
+									.text(tituloLivro)
+								)
+							.append(
+								$("<td>")
+									.text(descricaoLivro)
+							)
+							.append(
+								$("<td>")
+									.text(generoLivro)
+							)
+							.append(
+								$("<td>")
+									.text(autorLivro)
+							)
+							.append(
+								$("<td>")
+									.append($("<img>").attr('src', 'lixo.png'))
+								)
+					);
+			})
+
+			$("#acervo").on("click","img", function(){
+				alert("Atenção! Este cadastro será apagado.");
+				$(this).parents("#acervo tr").remove();
+			})
+		});
+
+		function sugerir(){
+			var nome= document.getElementById('autor').value;
+			var lista= document.getElementById('historico');
+			var adicionar= true;
+
+			var opt= document.createElement('option');
+
+			for(i=0; i<lista.options.length; i++){
+				if(nome==lista.options[i].value){
+					adicionar=false;
+				}
+			}
+			if(adicionar==true){
+				opt.value=nome;
+				lista.appendChild(opt);
+			}
+
+		}
+	</script>
 </html>
