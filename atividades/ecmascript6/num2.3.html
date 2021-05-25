@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 3</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="author" content="Marco Rocha">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/better-tema.css">
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(function(){
+
+$("#botao").click(function(){
+    let lado1 = $("#l1").val();
+    let lado2 = $("#l2").val();
+    let lado3 = $("#l3").val();
+    if(lado1<=0 || lado2<=0 || lado3<=0)
+    {
+        $("#resultado").text("Insira valores maiores que zero e não negativos.");
+    }
+    else
+    {
+        $("#resultado").text("O " + tria(lado1,lado2,lado3));
+    }
+})
+
+$("#limpar").click(function(){
+    $("#l1").val("");
+    $("#l2").val("");
+    $("#l3").val("");
+    $("#resultado").text("");
+})
+
+function tria (lado1, lado2, lado3)
+{
+    lado1 = parseFloat(lado1);
+    lado2 = parseFloat(lado2);
+    lado3 = parseFloat(lado3);
+    if(cond_existencia_triangulo(lado1, lado2, lado3) == true)
+    {
+        return classificação_triangulo(lado1, lado2, lado3);
+    }
+    else
+    {
+        return "Triângulo não existe.";
+    }
+}
+
+function modulo (valor)
+{
+    if(valor < 0)
+    {
+        valor = valor * (-1);
+    }
+    return valor;
+}
+
+function cond_existencia_triangulo (lado1, lado2, lado3)
+{
+    if(modulo(lado2-lado3) < lado1 && lado1 < (lado2+lado3) || modulo(lado1-lado3) < lado2 && lado2 < (lado1+lado3) || modulo(lado1-lado2) < lado3 && lado3 < (lado1+lado2))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+function classificação_triangulo (lado1, lado2, lado3)
+{
+    if(lado1 == lado2 && lado1 == lado3 && lado2 == lado3)
+    {
+        return "Triângulo é equilátero.";
+    }
+    if(lado1 == lado2 && lado1!= lado3 || lado2 == lado3 && lado2 != lado1 || lado3 == lado1 && lado3 != lado2)
+    {
+        return "Triângulo é Isóceles.";
+    }
+    if(lado1 != lado2 && lado1 != lado3 && lado3 != lado2)
+    {
+        return "Triângulo é Escaleno.";
+    }
+
+}
+
+})
+    </script>
+  </head>
+    <body>
+    <section id="services">
+        <div class="container">
+            <div>
+                <br><br>
+                <h3>O triângulo é uma figura que possui três lados, e dependendo dos valores dos lados sua classificação pode ser equilátero, isósceles e escaleno dependendo se a quantidade de lados iguais forem respectivamente três, dois e nenhum. Contudo, nem toda junção de três tamanhos formam um triângulo válido, por exemplo, os lados 0, 0, 0. Faça um script que verifique as medidas e informe a classificação do triângulo.</h3><br>
+                <input type="text" id="l1" placeholder="1° lado"><br><br>
+                <input type="text" id="l2" placeholder="2° lado"><br><br>
+                <input type="text" id="l3" placeholder="3° lado"><br><br>
+                <button type="button" id="botao" class="btn">Executar</button>
+                <button type="button" id="limpar" class="btn">Limpar</button><br><br>
+                <p id="resultado"></p>
+            </div>
+        </div>
+      </section>
+    <br><br><br><br><br>
+    <h4><a href="../atividades3trimestre.html">> Voltar</a></h4>
+  </body>
+</html>

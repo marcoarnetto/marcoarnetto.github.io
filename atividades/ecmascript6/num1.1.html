@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 1</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="author" content="Marco Rocha">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/better-tema.css">
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+    $("#botao").click(function(){
+        let texto_array = $("#texto_array").val();
+        texto_array = texto_array.replace(/\s+/g, '');
+        let array = texto_array.split(",");
+        let tamanho = array.length;
+        if(array[tamanho-1] == "")
+        {
+            array.pop();
+        }
+        $("#resultado").html("<br>Valor minimo: " + minimo(array) + "<br> Valor máximo: " + maximo(array) + "<br> Array sem repetição: " + sem_repetir(array) + "<br> Array em ordem: " + ordem_crescente(array));
+    })
+
+    $("#limpar").click(function(){
+        $("#resultado").text("");
+        $("#texto_array").val("");
+    })
+
+    function minimo (vetor)
+    {
+        let min;
+        vetor.forEach( function(num)
+        {
+            if(num == Math.min(...vetor))
+            {
+                min = num;
+            }            
+        });
+        return min;
+    }
+
+    function maximo (vetor)
+    {
+        let max;
+        vetor.forEach( function(num)
+        {
+            if(num == Math.max(...vetor))
+            {
+                max = num;
+            }            
+        });
+        return max;
+    }
+
+    function sem_repetir (vetor)
+    {
+        let vetor_sem_repeticao = [...new Set(vetor)];
+        return vetor_sem_repeticao.join(",");
+    }
+
+    function ordem_crescente (vetor)
+    {
+        return vetor.sort().join(",");
+    }
+    })
+</script>
+  </head>
+  <body>
+    <br><br><br><br>
+    <section id="services">
+        <div class="container">
+            <div>
+                <br><br>
+                <h3>Crie um script que implemente as funções <i>min</i>, <i>max</i>, <i>uniq</i> e <i>sortNum</i>. Tais funções devem:</h3>
+                <h3>Retornar o valor mínimo (min) e máximo (max) de um array de números, retornar o array sem repetições (uniq) e ordenar o array numérico (sortNum).</h3><br>
+                <h4>Digite os valores/números do array entre virgulas.</h4>
+                <input type="text" id="texto_array" placeholder="Digite o array"><br><br>
+                <button type="button" id="botao" class="btn">Executar</button>
+                <button type="button" id="limpar" class="btn">Limpar</button>
+                <p id="resultado"></p>
+            </div>
+        </div>
+      </section>
+    <br><br><br><br><br>
+    <h4><a href="../atividades3trimestre.html">> Voltar</a></h4>
+  </body>
+</html>

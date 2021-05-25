@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 4</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="author" content="Marco Rocha">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/better-tema.css">
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(function(){
+
+$("#botao").click(function(){
+    let letras = $("#letras").val();
+    let rotacoes = $("#rotacoes").val();
+    rotacoes = parseInt(rotacoes);
+    $("#resultado").text(criptografia(letras,rotacoes));
+})
+
+$("#limpar").click(function(){
+    $("#letras").val("");
+    $("#rotacoes").val("");
+    $("#resultado").text("");
+})
+
+function criptografia (letras, rotacoes)
+{
+    let array_letras = letras.split(''); 
+    let array_alfabeto = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    let tam_letras = array_letras.length;
+    let tam_alfabeto = array_alfabeto.length;
+    let i = 0;
+       let x = 0;
+       let a;
+       let aux;
+    while(x<tam_letras)
+       {
+           aux = array_letras[x];
+           while(i<tam_alfabeto)
+           {
+               if(array_alfabeto[i] == aux)
+               {
+                   if((i+rotacoes)>tam_alfabeto)
+                   {
+                       a = i + rotacoes - tam_alfabeto;
+                       array_letras[x] = array_alfabeto[a];
+                   }
+                   else if((i+rotacoes) == tam_alfabeto)
+                   {
+                       array_letras[x] = array_alfabeto[0];
+                   }
+                   else{
+                       array_letras[x] = array_alfabeto[i+rotacoes];
+                   }
+               }
+               i++;
+           }
+           i = 0;
+           x++;
+       }	
+       let string = array_letras.join('');
+    return string;
+}
+
+})
+    </script>
+  </head>
+    <body>
+    <section id="services">
+        <div class="container">
+            <div>
+                <br><br>
+                <h3>A Cifra de Rotação é uma técnica de criptografia que faz uma transposição de um caractere por outro. Para compreender como ele funciona veja este mapeamento de transposição onde não há rotação:</h3>
+                <h4>ENTRADA =  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</h4>
+                <h4>ENTRADA = A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</h4>
+                <h3>Basicamente, o caractere de entrada é o mesmo de saída, ou seja, o caractere A será substituído por A. Contudo, se for aplicado a rotação de três posições na saída o resultado será:</h3>
+                <h4>ENTRADA = A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</h4>
+                <h4>SAÍDA = X Y Z A B C D E F G H I J K L M N O P Q R S T U V W</h4>
+                <h3>Implemente um script que faça isso.</h3><br>
+                <input type="text" id="letras" placeholder="Sequência de letras" style="width: 50%;">
+                <input type="text" id="rotacoes" placeholder="Número de rotações" style="width: 20%;">
+                <br><br>
+                <button type="button" id="botao" class="btn">Executar</button>
+                <button type="button" id="limpar" class="btn">Limpar</button><br><br>
+                <p id="resultado"></p>
+            </div>
+        </div>
+      </section>
+    <br><br><br><br><br>
+    <h4><a href="../atividades3trimestre.html">> Voltar</a></h4>
+  </body>
+</html>

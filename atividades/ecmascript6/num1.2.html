@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 2</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="author" content="Marco Rocha">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/better-tema.css">
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+       $(function(){
+
+$("#botao").click(function(){
+    let texto_array = $("#texto_array").val();
+    texto_array = texto_array.replace(/\s+/g, '');
+    let array = texto_array.split(",");
+    let tamanho = array.length;
+    if(array[tamanho-1] == "")
+    {
+        array.pop();
+    }
+    $("#resultado").html("<br>Sequencia de fibonacci até " + texto_array + " números: " +  fibonacci(texto_array));
+})
+
+$("#limpar").click(function(){
+    $("#resultado").text("");
+    $("#texto_array").val("");
+})
+
+function fibonacci (x) 
+{
+    let array = new Array;
+    array.push(0);
+    let a = 0; 
+    let b = 1;
+    let f = 1;
+    for (let i=0; i<x-1; i++) 
+    {
+        array.push(f);
+        f = a + b;
+        a = b;
+        b = f;
+    }
+    return array.join(",");
+}
+
+})
+    </script>
+  </head>
+    <body>
+    <section id="services">
+        <div class="container">
+            <div>
+                <br><br>
+                <h3>Crie uma função para exibir a sequência de Fibonacci até a posição n, por exemplo, a série com os quatro primeiros elementos é 0, 1, 1, 2. O valor da entrada e saída são respectivamente um número e um vetor. Você deve disponibilizar uma página para entrada do número n e sua respectiva saída.</h3><br>
+                <input type="text" id="texto_array" placeholder="Digite até que posição seja exibida a sequência:"><br><br>
+                <button type="button" id="botao" class="btn">Executar</button>
+                <button type="button" id="limpar" class="btn">Limpar</button>               
+                <p id="resultado"></p>
+            </div>
+        </div>
+      </section>
+    <br><br><br><br><br>
+    <h4><a href="../atividades3trimestre.html">> Voltar</a></h4>
+  </body>
+</html>

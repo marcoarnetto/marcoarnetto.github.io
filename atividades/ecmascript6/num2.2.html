@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 2</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="author" content="Marco Rocha">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/better-tema.css">
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(function(){
+
+$("#botao").click(function(){
+    let salario = $("#salario").val();
+    console.log(salario);
+    $("#resultado").text("Resultado = " + impos(salario).toFixed(2) + " reais.");
+})
+
+$("#limpar").click(function(){
+    $("#salario").val("");
+    $("#resultado").text("");
+})
+
+function impos (salario)
+{
+    salario = parseFloat(salario);
+    if(salario <= 1903.99)
+    {
+        return "Não há taxas!";
+    }
+    if(salario > 1903.99 && salario <= 2826.65)
+    {
+        return (salario * 0.075) - 142.80;
+    }
+    if(salario > 2826.65 && salario <= 3751.05)
+    {
+        return (salario * 0.15) - 354.80;
+    }
+    if(salario > 3751.05 && salario <= 4664.68)
+    {
+        return (salario * 0.225) - 636.13;
+    }
+    if(salario > 4664.68)
+    {
+        return (salario * 0.275) - 869.36;
+    }
+}
+
+
+})
+    </script>
+  </head>
+    <body>
+    <section id="services">
+        <div class="container">
+            <div>
+                <br><br>
+                <h3>Faça um programa que realize o cálculo do imposto de renda de acordo com o salário mensal, baseado nas alíquotas da Tabela</h3><br>
+                <table border="2">
+                    <tr>
+                        <th>Base de cálculo mensal</th>
+                        <th>Alíquota %</th>
+                        <th>Parcela a deduzir do imposto</th>
+                    </tr>
+                    <tr>
+                        <td>Até 1.903,99</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>De 1.903,99 até 2.826,65</td=>
+                        <td>7,5</td>
+                        <td>142,80</td>
+                    </tr>
+                    <tr>
+                        <td>De 2.826,66 até 3.751,05</td>
+                        <td>15</td>
+                        <td>354,80</td>
+                    </tr>
+                    <tr>
+                        <td>De 3.751,06 até 4.664,68</td>
+                        <td>22,5</td>
+                        <td>636,13</td>
+                    </tr>
+                    <tr>
+                        <td>Acima de 4.664,68</td>
+                        <td>27,5</td>
+                        <td>869,36</td>
+                    </tr>
+                </table><br>
+                <input type="text" id="salario" placeholder="Salário">
+                <br><br>
+                <button type="button" id="botao" class="btn">Calcular</button>
+                <button type="button" id="limpar" class="btn">Limpar</button><br><br>
+                <p id="resultado"></p>
+            </div>
+        </div>
+        <!--/.container--> 
+      </section>
+      <br><br><br><br><br>
+    <h4><a href="../atividades3trimestre.html">> Voltar</a></h4>
+  </body>
+</html>
